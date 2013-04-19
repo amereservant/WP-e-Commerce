@@ -53,6 +53,8 @@ class WPSC_Settings_Tab_Shipping extends WPSC_Settings_Tab {
 			}
 		}
 
+        do_action('wpsc_submit_shipping_options');
+        
 		if ( ! get_option( 'do_not_use_shipping' ) && ! get_option( 'custom_shipping_options' ) ) {
 			update_option( 'do_not_use_shipping', '1' );
 			return array( 'shipping_disabled' => 1 );
